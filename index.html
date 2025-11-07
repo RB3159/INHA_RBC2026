@@ -240,7 +240,43 @@
     th {
       background: #efefef;
     }
-
+    footer .lab-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    
+    footer .lab-logos a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #333;
+      transition: transform 0.3s;
+    }
+    
+    footer .lab-logos a:hover {
+      transform: translateY(-4px);
+      color: #0078ff;
+    }
+    
+    footer .lab-logos img {
+      height: 50px;
+      margin-bottom: 8px;
+      opacity: 0.9;
+      transition: 0.3s;
+    }
+    
+    footer .lab-logos img:hover {
+      opacity: 1;
+    }
+    
+    footer .lab-logos span {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
@@ -399,24 +435,31 @@
         </video>
       </div>
     </section>
+
+    <!-- Labs -->
     <section class="section contact" data-anchor="contact">
       <footer>
         <div class="footer-info">
           <p>📍 Inha University, 100 Inha-ro, Michuhol-gu, Incheon, South Korea</p>
           <p>📧 Contact: <a href="mailto:inhaunited@inha.edu">inhaunited@inha.edu</a></p>
         </div>
+    
         <div class="lab-logos">
           <a href="https://sparolab.github.io" target="_blank">
             <img src="favicon.png" alt="Sparo Lab">
+            <span>Sparo Lab</span>
           </a>
-          <a href="https://ai.inha.ac.kr" target="_blank">
+          <a href="https://rcv-inha.notion.site/webhome" target="_blank">
             <img src="RCVLAB.webp" alt="RCV Lab">
+            <span>RCV Lab</span>
           </a>
-          <a href="https://robotics.inha.ac.kr" target="_blank">
+          <a href="https://artemis-inha.github.io/" target="_blank">
             <img src="ArtemisLab.jpg" alt="Artemis Lab">
+            <span>Artemis Lab</span>
           </a>
-          <a href="https://robotics.inha.ac.kr" target="_blank">
+          <a href="https://wjahn.github.io/rils/" target="_blank">
             <img src="RILS.png" alt="RILS Lab">
+            <span>RILS Lab</span>
           </a>
         </div>
       </footer>
