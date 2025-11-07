@@ -105,19 +105,17 @@
     ======================= */
     .team-grid {
       display: flex;
-      flex-direction: column;
-      gap: 30px; /* 줄 간격 */
-      max-width: 1000px;
-      width: 100%;
-      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
     }
     
     .team-row {
       display: flex;
-      flex-wrap: wrap; 
-      gap: 30px; /* 멤버 간 간격 */
-      justify-content: center;
+      justify-content: center; /* 멤버 중앙 정렬 */
+      gap: 30px;
       width: 100%;
+      flex-wrap: unset; /* wrap 제거 */
     }
     
     .team-row .team-member {
@@ -132,10 +130,9 @@
       text-align: center;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      width: 100%;
-      max-width: 300px;
+      flex: 1 1 250px;    /* 최소 폭 250px, 필요 시 늘어남 */
+      max-width: 300px;   /* 최대 폭 300px */
     }
-    
     .team-member:hover {
       transform: translateY(-6px);
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
@@ -161,7 +158,12 @@
       font-size: 0.95em;
       margin-bottom: 12px;
     }
-    
+    @media (max-width: 900px) {
+      .team-member {
+        flex: 1 1 80%;   /* 모바일에서는 한 줄에 1명씩 */
+        max-width: 90%;
+      }
+    }
     /* 소셜 아이콘 영역 */
     .social-icons {
       display: flex;
