@@ -277,6 +277,41 @@
       font-size: 0.95rem;
       font-weight: 500;
     }
+    .lab-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #333;
+      transition: transform 0.3s;
+    }
+    
+    .lab-link:hover {
+      transform: translateY(-4px);
+      color: #0078ff;
+    }
+    
+    .lab-link img {
+      height: 50px;
+      margin-bottom: 8px;
+      opacity: 0.9;
+      transition: 0.3s;
+    }
+    
+    .lab-link img:hover {
+      opacity: 1;
+    }
+    
+    .lab-name {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    
+    .lab-fullname {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 2px;
+    }
   </style>
 </head>
 <body>
@@ -469,9 +504,9 @@
   <script>
     new fullpage('#fullpage', {
       autoScrolling: true,
-      anchors: ['home', 'about', 'approach', 'opensource', 'media'],
+      anchors: ['home', 'about', 'approach', 'opensource', 'media', 'contact'],
+      navigationTooltips: ['Home', 'Team', 'Research', 'Open Source', 'Media', 'Contact'],
       navigation: true,
-      navigationTooltips: ['Home', 'Team', 'Research', 'Open Source', 'Media'],
       showActiveTooltip: true,
       credits: { enabled: false }  // ✅ hides the fullPage.js credit
     });
