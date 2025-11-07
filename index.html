@@ -75,57 +75,88 @@
 
     /* Left Social Icons */
     .social {
-      position: absolute;
-      left: 50px;
+      position: fixed;
+      left: 40px;
       top: 50%;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
+      z-index: 100;
     }
+    
     .social a {
       color: #74a9e1;
       font-size: 24px;
-      transition: color 0.3s;
+      transition: all 0.3s ease;
     }
+    
     .social a:hover {
       color: #0078ff;
+      transform: scale(1.15);
     }
+    
+    /* =======================
+       Team Section
+    ======================= */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 40px;
-      margin-top: 40px;
+      margin-top: 60px;
+      padding: 0 40px;
       text-align: center;
     }
-  
+    
+    .team-member {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+    
     .team-member img {
-      width: 160px;
-      height: 160px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border: 3px solid #0078ff30;
     }
-  
+    
     .team-member h3 {
       margin: 10px 0 5px;
+      font-weight: 600;
     }
-  
+    
     .team-member p {
       color: #555;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
     }
-  
+    
+    /* Social icons inside each member */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+    }
+    
     .social-icons a {
-      margin: 0 8px;
       color: #333;
       font-size: 1.3em;
-      transition: color 0.3s;
+      transition: color 0.3s ease, transform 0.2s ease;
     }
-  
+    
     .social-icons a:hover {
       color: #0078ff;
+      transform: scale(1.2);
     }
 
     /* Text */
