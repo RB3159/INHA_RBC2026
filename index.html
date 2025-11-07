@@ -233,21 +233,23 @@
     /* Lab logos - 넓게 분포 */
     footer .lab-logos {
       display: flex;
-      justify-content: space-around; /* 좌우 균등 분포 */
+      justify-content: space-between; /* 좌우 균등 배치 */
       align-items: center;
-      gap: 100px;            /* 로고 사이 간격 */
-      flex-wrap: wrap;
-      width: 90%;             /* 섹션 안에서 꽉 차게 */
-      max-width: 1800px;
+      gap: 80px;       /* gap을 늘림 */
+      flex-wrap: nowrap; /* 한 줄 유지 */
+      width: 90%;
+      max-width: 1200px;
     }
     
     footer .lab-logos a {
       display: flex;
       flex-direction: column;
+      flex: 1 1 0;   /* 폭 최소값 0, 필요 시 늘어남 */
       align-items: center;
       text-decoration: none;
       color: #333;
       transition: transform 0.3s;
+      min-width: 150px; /* 항목 최소 폭 지정 */
     }
     
     footer .lab-logos a:hover {
