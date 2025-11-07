@@ -103,11 +103,10 @@
     /* =======================
        Team Section
     ======================= */
-    
     .team-grid {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 30px; /* 줄 간격 */
       max-width: 1000px;
       width: 100%;
       align-items: center;
@@ -115,20 +114,25 @@
     
     .team-row {
       display: flex;
-      gap: 30px;
+      gap: 30px; /* 멤버 간 간격 */
       justify-content: center;
-      flex-wrap: wrap; /* 화면 좁으면 줄 바꿈 */
+      width: 100%;
+    }
+    
+    .team-row .team-member {
+      flex: 1 1 0;
+      max-width: 300px; /* 원하는 최대 폭 */
     }
     
     .team-member {
-      flex: 1 1 220px; /* 최소 폭 220px, 필요시 줄 바꿈 */
-      max-width: 300px;
       background: #ffffff;
       border-radius: 20px;
       padding: 30px 20px;
       text-align: center;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      max-width: 300px;
     }
     
     .team-member:hover {
@@ -156,7 +160,6 @@
       font-size: 0.95em;
       margin-bottom: 12px;
     }
-
     
     /* 소셜 아이콘 영역 */
     .social-icons {
