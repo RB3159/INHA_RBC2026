@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- 아이콘 (Font Awesome) -->
+  <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/a2e0f6f1d9.js" crossorigin="anonymous"></script>
 
   <style>
@@ -26,7 +26,7 @@
       color: #333;
     }
 
-    /* 네비게이션 바 */
+    /* Navigation Bar */
     header {
       position: fixed;
       top: 0;
@@ -56,7 +56,7 @@
       color: #0078ff;
     }
 
-    /* 각 섹션 */
+    /* Sections */
     .section {
       display: flex;
       justify-content: center;
@@ -64,15 +64,16 @@
       flex-direction: column;
       height: 100vh;
       text-align: center;
+      padding: 0 20px;
     }
 
-    /* 첫 화면 */
+    /* Home */
     .home {
       position: relative;
       background-color: white;
     }
 
-    /* 왼쪽 소셜 아이콘 */
+    /* Left Social Icons */
     .social {
       position: absolute;
       left: 50px;
@@ -91,7 +92,7 @@
       color: #0078ff;
     }
 
-    /* 중앙 텍스트 */
+    /* Text */
     .home h1 {
       font-size: 3rem;
       font-weight: 700;
@@ -102,7 +103,7 @@
       margin: 10px 0 20px;
     }
     .home button {
-      background-color: #c0392b;
+      background-color: #0078ff;
       color: white;
       border: none;
       border-radius: 8px;
@@ -111,10 +112,10 @@
       cursor: pointer;
     }
     .home button:hover {
-      background-color: #a93226;
+      background-color: #005fcc;
     }
 
-    /* 팀 소개 */
+    /* About Section */
     .about {
       background-color: #f9f9f9;
     }
@@ -125,7 +126,24 @@
     }
     .about p {
       font-size: 1.1rem;
+      max-width: 700px;
     }
+
+    /* Simple table style for team info */
+    table {
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 80%;
+      max-width: 700px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    th {
+      background: #efefef;
+    }
+
   </style>
 </head>
 <body>
@@ -133,18 +151,17 @@
   <header>
     <h1>Inha-United@Home</h1>
     <nav>
-      <a href="#home">집</a>
-      <a href="#about">에 대한</a>
-      <a href="#competition">경쟁</a>
-      <a href="#team">명단</a>
-      <a href="#robot">로봇</a>
-      <a href="#media">미디어</a>
+      <a href="#home">Home</a>
+      <a href="#about">Team</a>
+      <a href="#approach">Research</a>
+      <a href="#opensource">Open Source</a>
+      <a href="#media">Media</a>
     </nav>
   </header>
 
   <div id="fullpage">
 
-    <!-- 홈 섹션 -->
+    <!-- Home -->
     <section class="section home" data-anchor="home">
       <div class="social">
         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -153,17 +170,54 @@
         <a href="#"><i class="fab fa-github"></i></a>
       </div>
       <div>
-        <h1>안녕하세요</h1>
-        <p>우리는 <b>Inha-United@Home</b>입니다 🤖</p>
-        <p>시스템 및 로봇 연구소</p>
-        <button>팀 설명 문서 📄</button>
+        <h1>Welcome!</h1>
+        <p>We are <b>Inha-United@Home</b> 🤖</p>
+        <p>A newly founded RoboCup @Home team from Inha University (2025).</p>
+        <button onclick="location.href='#about'">Learn More</button>
       </div>
     </section>
 
-    <!-- 팀 소개 -->
+    <!-- About / Team -->
     <section class="section about" data-anchor="about">
-      <h1>팀 소개</h1>
-      <p>우리는 서비스 로봇, 비전 인식, 자율제어 연구를 진행하고 있습니다.</p>
+      <h1>Our Team</h1>
+      <p>
+        We are a research-driven robotics team working on service robots, autonomous perception,
+        and intelligent control systems for domestic and public environments.
+      </p>
+
+      <table>
+        <tr><th>Name</th><th>Role</th><th>Affiliation</th></tr>
+        <tr><td>[Leader Name]</td><td>Team Leader</td><td>Inha University</td></tr>
+        <tr><td>[Member 2]</td><td>Vision & Perception</td><td>Inha University</td></tr>
+        <tr><td>[Member 3]</td><td>Control & Planning</td><td>Inha University</td></tr>
+      </table>
+    </section>
+
+    <!-- Research -->
+    <section class="section" data-anchor="approach">
+      <h1>Scientific Approach</h1>
+      <p>
+        Our work focuses on integrating vision, language, and control in real-world service robots.
+        We aim to build reproducible systems that can perceive, plan, and act intelligently.
+      </p>
+      <ul style="text-align:left;max-width:600px;">
+        <li>Vision-Language Grounding for Object Understanding</li>
+        <li>Operational Space Control for Manipulation</li>
+        <li>Reinforcement Learning in Real-to-Sim Environments</li>
+      </ul>
+    </section>
+
+    <!-- Open Source -->
+    <section class="section" data-anchor="opensource" style="background:#f9f9f9;">
+      <h1>Open-Source Contributions</h1>
+      <p>All our research outputs and robot models will be publicly available.</p>
+      <p><a href="https://github.com/Inha-United" target="_blank">🔗 Visit our GitHub</a></p>
+    </section>
+
+    <!-- Media -->
+    <section class="section" data-anchor="media">
+      <h1>Media</h1>
+      <p>Photos and videos of our robots will be available soon.</p>
     </section>
 
   </div>
@@ -171,11 +225,11 @@
   <script>
     new fullpage('#fullpage', {
       autoScrolling: true,
-      scrollHorizontally: false,
-      anchors: ['home', 'about'],
+      anchors: ['home', 'about', 'approach', 'opensource', 'media'],
       navigation: true,
-      navigationTooltips: ['홈', '팀 소개'],
-      showActiveTooltip: true
+      navigationTooltips: ['Home', 'Team', 'Research', 'Open Source', 'Media'],
+      showActiveTooltip: true,
+      credits: { enabled: false }  // ✅ hides the fullPage.js credit
     });
   </script>
 
