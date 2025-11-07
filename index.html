@@ -14,7 +14,16 @@
 
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/a2e0f6f1d9.js" crossorigin="anonymous"></script>
-
+  <script>
+    // 모바일에서 100vh 문제를 해결하기 위해 실제 뷰포트 높이를 CSS 변수로 저장
+    function setVh() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setVh();
+    window.addEventListener('resize', setVh);
+    window.addEventListener('orientationchange', setVh);
+  </script>
   <style>
     * {
       box-sizing: border-box;
@@ -60,13 +69,18 @@
         display: none !important;
     }
     
-    /* Sections */
+    /* replace 100vh with dynamic vh to avoid mobile address-bar issues */
+    :root {
+      --vh: 1vh;
+    }
+    
+    /* 모든 섹션 높이에 100vh 대신 calc(var(--vh) * 100) 사용 */
     .section {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
       text-align: center;
       padding: 0 20px;
     }
@@ -112,10 +126,10 @@
     
     .team-row {
       display: flex;
-      justify-content: center; /* 멤버 중앙 정렬 */
+      justify-content: center;
       gap: 30px;
       width: 100%;
-      flex-wrap: unset; /* wrap 제거 */
+      flex-wrap: wrap;
     }
     
     .team-row .team-member {
@@ -344,7 +358,6 @@
        Team Section (규격 맞춤)
     ======================= */
     .section.team {
-      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;       /* 세로 중앙정렬 */
@@ -365,6 +378,34 @@
       font-size: 1.1rem;
       max-width: 700px;
     }   
+
+        /* 1️⃣ 모바일 높이 자동 조절 */
+    .section.team,
+    .section.media {
+      height: auto;          /* 100vh 제거 */
+      min-height: 100vh;     /* 화면보다 작으면 최소 맞춤 */
+      padding: 100px 20px;      /* 내부 스크롤 허용 */
+    }
+    
+    /* 2️⃣ 모바일용 팀 그리드 수정 */
+    @media (max-width: 900px) {
+      .team-row {
+        flex-wrap: wrap;     /* ✅ 한 줄에 1~2명씩 자동 줄바꿈 */
+      }
+    
+      .team-member {
+        flex: 1 1 45%;       /* 두 명씩 배치 */
+        max-width: 45%;
+        margin-bottom: 20px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .team-member {
+        flex: 1 1 100%;      /* 한 줄에 한 명 */
+        max-width: 90%;
+      }
+    }
     
     /* =======================
        Media Section (규격 맞춤)
@@ -638,6 +679,7 @@
       autoScrolling: true,
       scrollOverflow: false,
       fitToSection: false, 
+      responsiveWidth: 900, // ✅ 900px 이하에서는 fullPage 비활성화
       anchors: ['home', 'team', 'research', 'opensource', 'media', 'contact'],
       navigationTooltips: ['Home', 'Team', 'Research', 'Open Source', 'Media', 'Contact'],
       navigation: true,
