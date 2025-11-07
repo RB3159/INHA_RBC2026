@@ -104,12 +104,24 @@
        Team Section
     ======================= */
     .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 40px;
-      margin-top: 50px;
-      padding: 0 30px;
-      justify-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 30px; /* 줄 간격 */
+      max-width: 1000px;
+      width: 100%;
+      align-items: center;
+    }
+    
+    .team-row {
+      display: flex;
+      gap: 30px; /* 멤버 간 간격 */
+      justify-content: center;
+      width: 100%;
+    }
+    
+    .team-row .team-member {
+      flex: 1 1 0;
+      max-width: 300px; /* 원하는 최대 폭 */
     }
     
     .team-member {
@@ -329,7 +341,7 @@
        Team Section (규격 맞춤)
     ======================= */
     .section.team {
-      height: 100vh;                 /* 화면 전체 높이 */
+      height: 200vh;                 /* 화면 전체 높이 */
       display: flex;
       flex-direction: column;
       justify-content: center;       /* 세로 중앙정렬 */
@@ -349,17 +361,7 @@
     .section.team p {
       font-size: 1.1rem;
       max-width: 700px;
-    }
-    
-    /* 팀 그리드 — 높이 안 넘치게 비율 조정 */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-      max-width: 1000px;
-      width: 100%;
-    }
+    }   
     
     /* =======================
        Media Section (규격 맞춤)
@@ -458,22 +460,19 @@
         for domestic and public environments.
       </p>
     
-      <div class="team-grid">
+    <div class="team-grid">
+    
+      <!-- 첫 번째 줄: 3명 -->
+      <div class="team-row">
         <!-- Member 1 -->
         <div class="team-member">
           <img src="https://github.com/octocat.png" alt="Leader" />
           <h3>Leader Name</h3>
           <p>Team Leader</p>
           <div class="social-icons">
-            <a href="https://github.com/username" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="https://linkedin.com/in/username" target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a href="mailto:leader@email.com"
-              ><i class="fas fa-envelope"></i
-            ></a>
+            <a href="https://github.com/username" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/username" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:leader@email.com"><i class="fas fa-envelope"></i></a>
             <a href="https://scholar.google.com/citations?user=XXXX" target="_blank" title="Google Scholar"><i class="fa fa-scholar"></i></a>
             <a href="https://username.github.io" target="_blank" title="Homepage"><i class="fa fa-homepage"></i></a>
           </div>
@@ -485,15 +484,9 @@
           <h3>Member 2</h3>
           <p>Vision & Perception</p>
           <div class="social-icons">
-            <a href="https://github.com/member2" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="https://linkedin.com/in/member2" target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a href="mailto:member2@email.com"
-              ><i class="fas fa-envelope"></i
-            ></a>
+            <a href="https://github.com/member2" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/member2" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:member2@email.com"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
     
@@ -503,19 +496,71 @@
           <h3>Member 3</h3>
           <p>Control & Planning</p>
           <div class="social-icons">
-            <a href="https://github.com/member3" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="https://linkedin.com/in/member3" target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a href="mailto:member3@email.com"
-              ><i class="fas fa-envelope"></i
-            ></a>
+            <a href="https://github.com/member3" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/member3" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:member3@email.com"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
       </div>
-    </section>
+    
+      <!-- 두 번째 줄: 3명 -->
+      <div class="team-row">
+        <!-- Member 4 -->
+        <div class="team-member">
+          <img src="https://github.com/octocat.png" alt="Member 4" />
+          <h3>Member 4</h3>
+          <p>Navigation & Mapping</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+    
+        <!-- Member 5 -->
+        <div class="team-member">
+          <img src="https://github.com/octocat.png" alt="Member 5" />
+          <h3>Member 5</h3>
+          <p>Hardware & Integration</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+    
+        <!-- Member 6 -->
+        <div class="team-member">
+          <img src="https://github.com/octocat.png" alt="Member 6" />
+          <h3>Member 6</h3>
+          <p>Software & Backend</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- 세 번째 줄: 2명 -->
+      <div class="team-row">
+        <!-- Member 7 -->
+        <div class="team-member">
+          <img src="https://github.com/octocat.png" alt="Member 7" />
+          <h3>Member 7</h3>
+          <p>Documentation</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+    
+        <!-- Member 8 -->
+        <div class="team-member">
+          <img src="https://github.com/octocat.png" alt="Member 8" />
+          <h3>Member 8</h3>
+          <p>Community & Outreach</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
 
 
     <!-- Research -->
