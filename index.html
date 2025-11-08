@@ -48,7 +48,7 @@
       padding: 0 40px;
       background: linear-gradient(to bottom, #b5dbff 0%, #cce7ff 100%);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid #eee;
+      border-bottom: none;
       z-index: 10;
     }
     header h1 {
@@ -255,11 +255,14 @@
     
     /* Contact Section */
     .section.contact {
+      
+      justify-content: center; /* 세로 중앙 */
+      text-align: center;
+      height: auto;  
       margin-top: 40px;
       background: linear-gradient(to bottom, #ffffff 30%, #cce7ff 100%);
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* 상단: 텍스트, 하단: lab 로고 */
       align-items: center;
       height: 100vh;       /* 화면 전체 높이 */
       padding: 40px 20px;
@@ -287,10 +290,11 @@
     
     /* Lab logos - 넓게 분포 */
     footer .lab-logos {
+      margin-top: 60px;
       display: flex;
       justify-content: space-between; /* 좌우 균등 배치 */
       align-items: center;
-      gap: 150px;       /* gap을 늘림 */
+      gap: 200px;       /* gap을 늘림 */
       flex-wrap: nowrap; /* 한 줄 유지 */
       width: 100%;
     }
