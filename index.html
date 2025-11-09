@@ -456,11 +456,12 @@
     }
     
     .media video {
-      width: 20%;
-      max-width: 450px;
+      width: 45%;             /* 기본: 데스크탑에서는 두 개 나란히 (약 절반 폭) */
+      max-width: 800px;       /* 단일 영상일 때 넓게 보이도록 확장 */
       height: auto;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
     }
     
     /* 모바일에서 영상 하나씩 보이게 */
