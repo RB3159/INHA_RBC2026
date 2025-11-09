@@ -261,16 +261,34 @@
       background: #efefef;
     }
     
-    /* Contact Section */
+    /* ==== contact 섹션: 데스크탑에서는 원래(full-screen) 스타일, 모바일은 자동 레이아웃 ==== */
     .section.contact {
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* 상단 h1 / 하단 footer */
+      justify-content: space-between; /* 상단 h1 / 하단 footer 분리 */
       align-items: center;
       text-align: center;
-      padding: 240px 20px 40px; /* ⬅️ 상단 패딩 늘리기 */
-      min-height: 100vh;
+      padding: 240px 20px 40px; /* 데스크탑 기본 패딩 (원래대로) */
       background: linear-gradient(to bottom, #ffffff 0%, #ffffff 70%, #cce7ff 100%);
+      /* 기본 상태(데스크탑에 적용될 높이는 아래 미디어쿼리에서 설정) */
+    }
+    
+    /* 데스크탑: 화면 전체 높이(원래 동적 vh 사용) */
+    @media (min-width: 901px) {
+      .section.contact {
+        height: calc(var(--vh, 1vh) * 100);
+        min-height: calc(var(--vh, 1vh) * 100);
+        padding: 240px 20px 40px;
+      }
+    }
+    
+    /* 모바일: 섹션을 자동 높이로 만들고 패딩을 줄임 (기존 수정본과 동일한 동작) */
+    @media (max-width: 900px) {
+      .section.contact {
+        height: auto;
+        min-height: calc(var(--vh, 1vh) * 100); /* 안전용: 필요하면 모바일에서 최소 높이 유지 */
+        padding: 120px 20px 40px; /* 모바일에서 상단 패딩 축소 */
+      }
     }
 
     .section.contact h1 {
