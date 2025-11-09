@@ -375,31 +375,47 @@
       margin-top: 2px;
     }
     /* =======================
-       Team Section (규격 맞춤)
+       Team Section (데스크탑 상단 정렬)
     ======================= */
     .section.team {
       display: flex;
       flex-direction: column;
-      justify-content: center;       /* 세로 중앙정렬 */
-      align-items: center;           /* 가로 중앙정렬 */
+      justify-content: flex-start;   /* 상단부터 배치 */
+      align-items: center;
       background-color: #f9f9f9;
-      overflow: hidden;              /* 내부 스크롤 제거 */
+      overflow: hidden;
       text-align: center;
-      padding: 0 40px;
+      padding: 60px 40px;           /* 상단 패딩 조정 */
+      min-height: 100vh;             /* 화면보다 작으면 최소 높이 */
     }
     
     .section.team h1 {
       font-size: 2.5rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 20px;           /* 하단 간격 확보 */
     }
     
     .section.team p {
       font-size: 1.1rem;
       max-width: 700px;
-      margin: 0 auto;         /* 블록 자체를 가운데로 */
-      text-align: center;     /* 텍스트도 가운데 정렬 */
-      line-height: 1.6;       /* 가독성 향상용 (선택사항) */
+      margin: 0 auto 40px auto;     /* 텍스트 하단 간격 확보 */
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* 모바일 대응 */
+    @media (max-width: 900px) {
+      .section.team {
+        padding: 80px 20px;         /* 모바일은 여백 조금 늘림 */
+      }
+      .section.team h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+      .section.team p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+      }
     }
 
         /* 1️⃣ 모바일 높이 자동 조절 */
