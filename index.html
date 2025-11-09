@@ -269,7 +269,7 @@
       align-items: center;
       text-align: center;
       padding: 240px 20px 40px; /* ⬅️ 상단 패딩 늘리기 */
-      min-height: calc(var(--vh, 1vh) * 100);
+      min-height: 100vh;
       background: linear-gradient(to bottom, #ffffff 0%, #ffffff 70%, #cce7ff 100%);
     }
 
@@ -483,6 +483,13 @@
     }
     .fp-tooltip {
       color: #000 !important; /* 검은색으로 변경 */
+    }
+    @media (max-width: 900px) {
+      .section.contact {
+        height: auto;
+        padding: 120px 20px 40px; /* 모바일에서만 축소 */
+        min-height: calc(var(--vh, 1vh) * 100);
+      }
     }
   </style>
 </head>
